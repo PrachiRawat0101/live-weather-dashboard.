@@ -1,0 +1,84 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="container">
+
+        <header>
+            <h1>☁ Weather Dashboard</h1>
+            <p>Check real-time weather anywhere in the world</p>
+        </header>
+
+        <form id="form" class="search-box">
+            <input
+                type="text"
+                id="city"
+                placeholder="Enter city name..."
+                autocomplete="off"
+            >
+            <button type="submit" id="searchBtn">Search</button>
+        </form>
+
+        <p id="status" class="status" aria-live="polite">
+            Search for a city to see its weather.
+        </p>
+
+        <main id="weatherContent" class="hidden">
+
+            <section class="current-weather">
+                <h2 id="location">City, Country</h2>
+                <p id="currentDate"></p>
+
+                <div class="current-info">
+                    <div>
+                        <div id="temperature" class="temperature">--°C</div>
+                        <p id="weatherDescription">Weather</p>
+                    </div>
+                    <div id="weatherIcon" class="weather-icon">☀</div>
+                </div>
+
+                <div class="weather-details">
+                    <div class="detail">
+                        <span>Feels Like</span>
+                        <strong id="feelsLike">--°C</strong>
+                    </div>
+
+                    <div class="detail">
+                        <span>Humidity</span>
+                        <strong id="humidity">--%</strong>
+                    </div>
+
+                    <div class="detail">
+                        <span>Wind Speed</span>
+                        <strong id="wind">-- km/h</strong>
+                    </div>
+                </div>
+            </section>
+
+            <section class="forecast-section">
+                <h2>5-Day Weather Forecast</h2>
+
+                <div id="forecast" class="forecast-grid"></div>
+            </section>
+
+        </main>
+
+        <footer>
+            <p>Weather data provided by Open-Meteo API</p>
+        </footer>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
